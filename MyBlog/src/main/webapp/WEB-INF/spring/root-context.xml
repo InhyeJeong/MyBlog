@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+
+
+
+
+	<!-- MyBatis 설정 2가지는 수정해줘야함 :SpringCommon의 database-context에서 옮겨옴 -->
+
+
+	<!-- SqlSessionFactoryBean 빈 객체 설정 : common.model로 수정 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="edu.iot.common.model" />
+		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>edu.iot.**.dao</value>
+				<value>classpath:mapper/**/*-mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- Dao 자동 생성 빈 : ** 두개 써주면서 수정해결 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="edu.iot.**.dao" />
+	</bean>
+
+</beans>
