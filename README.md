@@ -53,7 +53,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 #### 사용자 정의 뷰 사용
 
-* Gallery 메뉴에서 Lightbox **이미지 출력**에 [사용자 정의 뷰(FileView)](./Myblog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
+* Gallery 메뉴에서 Lightbox **이미지 출력**에 [사용자 정의 뷰(FileView)](./MyBlog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
 
 <pre><code>
 @Component("fileView")
@@ -83,12 +83,10 @@ public class FileView extends AbstractView {
   
 #### Ajax
 * 게시물 삭제 및 댓글 작성 Ajax 처리
-자세한 내용은 [view.jsp](./TravelHelper/src/main/webapp/WEB-INF/views) 폴더에 있습니다.
+자세한 내용은 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views) 폴더에 있습니다.
 <pre><code>
 
 			$.get(url, params, function(result) {
-				
-
 				if (result == 'delete') {
 					location = '../';
 				} else {
