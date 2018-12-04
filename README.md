@@ -53,9 +53,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 #### 사용자 정의 뷰 사용
 
-* Gallery 메뉴에서 Lightbox **이미지 출력**
-
-[사용자 정의 뷰(FileView)](./Myblog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
+* Gallery 메뉴에서 Lightbox **이미지 출력** [사용자 정의 뷰(FileView)](./Myblog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
 
 <pre><code>
 @Component("fileView")
