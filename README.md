@@ -1,7 +1,7 @@
 # [**MyBlog**](http://13.209.26.216:8080/travelhelper/)
 
 
-Spring MVC 패턴으로 만든 개인 블로그 웹사이트 입니다.
+Spring MVC 패턴으로 만든 개인 블로그 반응형 웹사이트 입니다.
 
 * 2018년 11월 ~ (진행중)
 *  이 프로젝트의 **Tech Stack**
