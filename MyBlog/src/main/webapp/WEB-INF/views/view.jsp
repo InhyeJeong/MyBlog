@@ -42,19 +42,22 @@
 </script>
 
 <br><br>
+<!-- 사용자 태그라이브러리 사용  -->
+<%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
 
 <!-- Page Header -->
-<header class="masthead"
-	style="background-image: url('${context}/resources/img/post-bg.jpg')">
+<header class="masthead" style="background-image: url('${context}/resources/img/post-bg.jpg')">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
 				<div class="post-heading">
-					<h1>${Hboard.title }</h1>
-
+					<iot:page-animate-board title="${Hboard.title }" /> <!-- 사용자 태그라이브러리 사용  -->
 					<h2 class="subheading">${Hboard.subtitle }</h2>
-					<span class="meta">Posted by <a href="#">${Hboard.writer }</a>
+					<!--${Hboard.writer }  -->
+					<span class="meta">Posted by TONZ, On <fmt:formatDate value="${Hboard.regDate}" pattern="yyyy-MM-dd" />
+					<br>
+					<span>Views ${Hboard.readCnt}</span>
 					</span>
 				</div>
 			</div>
@@ -62,74 +65,18 @@
 	</div>
 </header>
 <br>
+
+<!-- 본문내용 -->
 <div class="container">
-<%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
-<iot:page-animate-header title="VIEW POSTING" />
-
-
-<div class="row">
-	<div class="col-md-2">작성자</div>
-	<div class="col-md-10">${USER.userId}</div>
-</div>
-<div class="row">
-	<div class="col-md-2">조회수</div>
-	<div class="col-md-10">${Hboard.readCnt}</div>
-</div>
-
-<div class="row">
-	<div class="col-md-2">작성일</div>
-	<div class="col-md-10">
-		<fmt:formatDate value="${Hboard.regDate}" pattern="yyyy-MM-dd" />
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-2">수정일</div>
-	<div class="col-md-10">${Hboard.strRegDate}</div>
-</div>
-<hr>
-
-<div>${Hboard.content}</div>
-
-<br>
+	<br>
+	<div class="col-lg-8 col-md-10 mx-auto">${Hboard.content}</div>
+	<br>
 </div>
 
 
-<%-- <!-- Post Content -->
-<article>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				<p>.</p>
 
 
-				<h2 class="section-heading">The Final Frontier</h2>
-				<p></p>
-				<blockquote class="blockquote"></blockquote>
-				<p></p>
-
-				<h2 class="section-heading">Reaching for the Stars</h2>
-				<p></p>
-
-				<a href="#"> <img class="img-fluid"
-					src="${context}/resources/img/post-sample-image.jpg" alt="">
-				</a> <span class="caption text-muted">사진설명</span>
-				<p></p>
-
-				<p>
-					출처 Placeholder text by <a href="http://spaceipsum.com/">Space
-						Ipsum</a>. Photographs by <a
-						href="https://www.flickr.com/photos/nasacommons/">NASA on The
-						Commons</a>.
-				</p>
-			</div>
-		</div>
-	</div>
-</article>
-
-<hr> --%>
-
-
-<!-- 로그인 사용자 -->
+<!-- 로그인 사용자만 수정, 삭제 가능 -->
 <c:if test="${not empty USER}">
 	<div class="text-center">
 

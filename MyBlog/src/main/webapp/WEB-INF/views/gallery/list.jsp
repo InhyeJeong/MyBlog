@@ -5,33 +5,58 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="context" value="${pageContext.request.contextPath}"
 	scope="request" />
-<link rel="stylesheet" href="${context}/resources/css/main.css" />
+
 
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${context}/resources/bower_components/lightbox/src/css/lightbox.css" rel="stylesheet">
+<script type="text/javascript"
+	src="${context}/resources/bower_components/lightbox/src/js/lightbox.js"></script>
 <meta charset="UTF-8">
 <title>Gallery List</title>
 </head>
+<style>
+.mdb-lightbox figure .img-fluid, .mdb-lightbox figure .mdb-lightbox  {
+    display: inline;
+}
+.mdb-lightbox figure img {
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    -webkit-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+</style>
 <body>
-	<br>
-	<h1 class="my-5">My GALLERY</h1>
+	<br><br>
+
+<%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
+<iot:page-animate-header title="My GALLERY" />
+	
 	<div>
-		<%-- <div class="float-left">
-			<form action="list">
-				ORDER BY <select name="orderBy">
-					<option value="mgallery_id"
-						<c:if test="${orderBy=='mgallery_id'}">selected</c:if>>
-						Date</option>
-					<option value="read_cnt"
-						<c:if test="${orderBy=='read_cnt'}">selected</c:if>>
-						Views</option>
-				</select>
-				<button type="submit" class="btn btn-unique btn-sm">
-					<i class="fas fa-share-square"></i>
-				</button>
-			</form>
-		</div> --%>
 
 		<%-- <c:if test="${not empty USER}"> --%>
 			<div class="float-right">
@@ -39,7 +64,7 @@
 			</div>
 		<%-- </c:if> --%>
 	</div>
-
+<br>
 
 	<!--lightBox해보자 !  -->
 
@@ -52,15 +77,13 @@
 			<div id="mdb-lightbox-ui"></div>
 
 			<!--Full width lightbox-->
-			<div class="mdb-lightbox">
+			<div class="mdb-lightbox" data-pswp-uid="6">
 				
 			
-			
+				<!-- 썸네일 이미지 -->
 				<c:forEach var="image" items="${mgallery}" varStatus="status">
-					<!-- 썸네일 이미지 -->
-						<figure class="col-md-3  <c:if test="${status.first}">active</c:if> ">
-							
-								<a href="../image/${image.imageId}">
+						<figure class="col-md-3">
+								<a href="../gallery/image/${image.imageId}" data-lightbox='roadtrip'>
 									<img class="img-fluid" src="../gallery/image/${image.imageId}" alt="${image.fileName} / ${image.title }">
 								</a>
 							
@@ -77,55 +100,6 @@
 
 	</div>
 	<!--/First row-->
-
-
-
-
-
-
-	 <%-- <table class="table table-striped ">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>Title</th>
-				<th>Owner</th>
-				<th>Gallery Num</th>
-				<th><a href="?orderBy=reg_date"> Date </a></th>
-				<th><a href="?orderBy=read_cnt"> Total Views </a></th>
-		</thead>
-		<tbody>
-			<c:forEach var="item" items="${list}" varStatus="status">
-				<fmt:formatDate var="regDate" value="${item.regDate }"
-					pattern="yyyy-MM-dd" />
-				<tr>
-					<td>${item.galleryId}</td>
-					<!--클릭시 view로 들어감  -->
-					<td><a href="view/${item.galleryId}?page=${pagination.page}">
-							${item.title}
-						</a>
-						<c:if test="${today==regDate}">
-							<span class="badge badge-pill badge-danger"> <i
-								class="fas fa-tag"></i> New
-							</span>
-						</c:if>
-						
-						<c:if test="${not empty item.list[0]}">
-							<img src="thumb/${item.list[0].imageId}" width="30">
-						</c:if>
-						
-					</td>
-					<td>${item.owner}</td>
-					<td>${item.list[0].imageId}/ ${item.list.size()}</td>
-					<td>${regDate}</td>
-					<td>${item.readCnt}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>  --%>
-
-
-
-
 </body>
 </html>
 
