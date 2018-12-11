@@ -84,11 +84,12 @@
 
 		<a href="../edit/${Hboard.hboardId}" class="mr-4" style="color: gray;">
 			<i style="color: gray;" class="fas fa-edit mr-2"></i> EDIT
-		</a> <a href="#" id="delete-btn" data-target="${Hboard.hboardId}"
-			class="mr-4" style="color: gray;"> <i class="fas fa-trash mr-2"
-			style="color: gray;"></i> DELETE
-		</a> <a href="#" onclick="history.back()" style="color: gray;"> <i
-			class="fas fa-undo mr-2" style="color: gray;"></i> BACK
+		</a>
+		<a href="#" id="delete-btn" data-target="${Hboard.hboardId}" class="mr-4" style="color: gray;">
+			<i class="fas fa-trash mr-2" style="color: gray;"></i> DELETE
+		</a>
+		<a href="#" onclick="history.back()" style="color: gray;">
+			<i class="fas fa-undo mr-2" style="color: gray;"></i> BACK
 		</a>
 	</div>
 </c:if>

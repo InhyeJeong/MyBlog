@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-
-
+import edu.iot.common.model.Hboard;
 import edu.iot.common.model.MyGalleryImage;
 
 import edu.iot.common.service.MyGalleryImageService;
@@ -206,4 +206,26 @@ public class MyGalleryController {
 		// 여기서 return 값은 jsp의 이름이 아니라 사용자 정의 뷰의 이름임
 		
 		}
+	
+	
+	
+	
+	@ResponseBody
+	@RequestMapping(value="delete",
+					method=RequestMethod.GET,
+					produces = "text/plain; charset=utf8")
+	public String delete(MyGalleryImage mgallery) {
+
+		try {
+			System.out.println("delete컨트롤러 실행됨");
+			
+			service.delete(mgallery);
+			
+			System.out.println(mgallery);
+			
+			return "delete";
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+	}
 }

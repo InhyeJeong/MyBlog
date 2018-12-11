@@ -9,6 +9,44 @@
 
 <!DOCTYPE html>
 <html>
+
+
+<script>
+	$(function() {
+		/**edit의 첨부파일 삭제랑 거의 비슷*/
+
+		//	삭제눌렀을때 alert
+		$('#delete-btn').click(function(e) {
+			e.preventDefault();
+			var imageId = $(this).data('target');
+			var result = confirm("사진을 삭제할까요? "+ imageId);
+
+			if (!result)
+				return;
+
+			var url = '../delete';
+			var params = {
+				imageId : imageId
+			};
+
+			/**Ajax 호출*/
+			$.get(url, params, function(result) {
+				// 결과 응답 데이터는 result로 전달됨
+				// 이곳에서 this는 Ajax핸들러이므로(더 이상 a태그가 아님) this 사용불가
+
+				if (result == 'delete') {
+					//어디로 어떻게 이동?:javascript로 페이지 이동 location
+					location = '../gallery/list';
+				} else {
+					alert('삭제 실패 : ' + result);
+				}
+			});
+
+		});
+
+	});
+</script>
+
 <head>
 <link
 	href="${context}/resources/bower_components/lightbox/src/css/lightbox.css"
@@ -61,6 +99,15 @@
 								</a>
 
 							</figure>
+							<%-- <c:if test="${not empty USER}"> --%>
+								<div class="text-center">
+									
+									<a href="#" id="delete-btn" data-target="${image.imageId}" class="mr-4" style="color: gray;">
+										<i class="fas fa-trash mr-2" style="color: gray;"></i> DELETE
+									</a>
+									
+								</div>
+							<%-- </c:if> --%>
 						</div>
 					</c:forEach>
 				</div>
