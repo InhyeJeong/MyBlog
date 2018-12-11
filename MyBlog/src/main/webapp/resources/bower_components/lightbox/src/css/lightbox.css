@@ -1,3 +1,34 @@
+.mdb-lightbox figure .img-fluid, .mdb-lightbox figure .mdb-lightbox  {
+    display: inline;
+}
+.mdb-lightbox figure img {
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    -webkit-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+
+
+
 html.lb-disable-scrolling {
   overflow: hidden;
   /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */
@@ -35,7 +66,7 @@ html.lb-disable-scrolling {
   border-radius: 3px;
 
   /* Image border */
-  border: 4px solid white;
+  /*border: 4px solid white;*/
 }
 
 .lightbox a img {
@@ -205,3 +236,5 @@ html.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+
+

@@ -10,96 +10,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${context}/resources/bower_components/lightbox/src/css/lightbox.css" rel="stylesheet">
+<link
+	href="${context}/resources/bower_components/lightbox/src/css/lightbox.css"
+	rel="stylesheet">
 <script type="text/javascript"
 	src="${context}/resources/bower_components/lightbox/src/js/lightbox.js"></script>
 <meta charset="UTF-8">
 <title>Gallery List</title>
 </head>
-<style>
-.mdb-lightbox figure .img-fluid, .mdb-lightbox figure .mdb-lightbox  {
-    display: inline;
-}
-.mdb-lightbox figure img {
-    cursor: -webkit-zoom-in;
-    cursor: zoom-in;
-    -webkit-transition: opacity .4s;
-    -o-transition: opacity .4s;
-    transition: opacity .4s;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-}
 
-
-
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-
-
-
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-
-</style>
 <body>
-	<br><br>
+	<br>
+	<br>
 
-<%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
-<iot:page-animate-header title="My GALLERY" />
-	
+	<%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
+	<iot:page-animate-header title="My GALLERY" />
+
 	<div>
 
 		<%-- <c:if test="${not empty USER}"> --%>
-			<div class="float-right">
-				<a href="create"><i class="fas fa-plus"></i> Add Gallery</a>
-			</div>
+		<div class="float-right">
+			<a href="create"><i class="fas fa-plus"></i> Add Gallery</a>
+		</div>
 		<%-- </c:if> --%>
 	</div>
-<br>
+	<br><br>
 
 	<!--lightBox해보자 !  -->
+	<div class="container-fluid">
+		<!--First row-->
+		<div class="row">
 
-	<!--First row-->
-	<div class="row">
+			<!--First column-->
 
-		<!--First column-->
-		<div class="col-md-12">
 
 			<div id="mdb-lightbox-ui"></div>
 
 			<!--Full width lightbox-->
 			<div class="mdb-lightbox" data-pswp-uid="6">
-				
-			
+
 				<!-- 썸네일 이미지 -->
-				<c:forEach var="image" items="${mgallery}" varStatus="status">
-						<figure class="col-md-3">
-								<a href="../gallery/image/${image.imageId}" data-lightbox='roadtrip'>
-									<img class="img-fluid" src="../gallery/image/${image.imageId}" alt="${image.fileName} / ${image.title }">
+				<div class="row">
+					<c:forEach var="image" items="${mgallery}" varStatus="status">
+						<div class="col-md-3">
+							<figure>
+								<a href="../gallery/image/${image.imageId}"
+									data-lightbox='roadtrip'> <img class="img-fluid"
+									src="../gallery/image/${image.imageId}"
+									alt="${image.fileName} / ${image.title }">
 								</a>
-							
-						</figure>
-				</c:forEach>
 
-
-
+							</figure>
+						</div>
+					</c:forEach>
+				</div>
 			</div>
 			<!--/Full width lightbox-->
 
+			<!--/First column-->
 		</div>
-		<!--/First column-->
-
+		<!--/First row-->
 	</div>
-	<!--/First row-->
 </body>
 </html>
 

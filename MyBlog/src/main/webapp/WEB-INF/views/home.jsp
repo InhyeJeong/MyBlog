@@ -62,6 +62,6 @@
 	</div>
 </div>
 
-<hr>
+<br><br>
 
 <!--Main layout-->

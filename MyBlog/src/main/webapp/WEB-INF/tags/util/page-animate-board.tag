@@ -6,7 +6,7 @@
 
 
 
-<h2 class="ml3 my-5" style="font-style:italic; color:white;">
+<h2 class="ml3 my-5" style="font-style:italic; color:gray;">
 	<i class="fas fa-list"></i>${title}</h2>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>

@@ -205,10 +205,10 @@ header.masthead .overlay {
 	background-color: #212529;
 	opacity: .5
 }
-
+/* 배 경 화  면 수 정*/
 header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading
 	{
-	padding: 200px 0 150px;
+	padding: 200px 0 200px;
 	color: #fff
 }
 

@@ -42,11 +42,12 @@
 </script>
 
 <br><br>
+<header >
 <!-- 사용자 태그라이브러리 사용  -->
 <%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('${context}/resources/img/post-bg.jpg')">
+<%-- <header class="masthead" style="background-image: url('${context}/resources/img/gray.png')"> --%>
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row">
@@ -64,7 +65,8 @@
 		</div>
 	</div>
 </header>
-<br>
+<br><br>
+<hr>
 
 <!-- 본문내용 -->
 <div class="container">
