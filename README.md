@@ -79,7 +79,8 @@ public class FileView extends AbstractView {
 		FileUtils.copyFile(file, response.getOutputStream());
 	}
 	
-}```
+}
+```
   
 #### Ajax
 * 게시물 삭제 및 댓글 작성 Ajax 처리
@@ -110,5 +111,6 @@ public class FileView extends AbstractView {
 				}
 			});
 		});
-	});```
+	});
+```
 
