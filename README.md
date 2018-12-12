@@ -37,7 +37,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 3. Gallery
 
-- 사진 업로드/삭제 가능(ADMIN 계정만 사용가능)
+- 사진 업로드/삭제(Ajax) 가능(ADMIN 계정만 사용가능)
 - LightBox를 활용하여 사진 뷰
 
 ### 4. Contact
@@ -55,7 +55,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 * Gallery 메뉴에서 Lightbox **이미지 출력**에 [사용자 정의 뷰(FileView)](./MyBlog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
 
-<pre><code>
+```dart
 @Component("fileView")
 public class FileView extends AbstractView {
 
@@ -79,19 +79,36 @@ public class FileView extends AbstractView {
 		FileUtils.copyFile(file, response.getOutputStream());
 	}
 	
-}</code></pre>
+}```
   
 #### Ajax
 * 게시물 삭제 및 댓글 작성 Ajax 처리
 자세한 내용은 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views) 폴더에 있습니다.
-<pre><code>
+```dart
+	$(function() {
+		//	삭제눌렀을때 alert
+		$('.delete-btn').click(function(e) {
+			e.preventDefault();
+			//	this는 클릭된 a태그(삭제버튼)
+			var imageId = $(this).data('target');
+			var result = confirm("사진을 삭제할까요? ");
 
+			if (!result) return;
+
+			var url = '../gallery/delete';
+			var params = {
+				imageId : imageId
+			};
+
+			/**Ajax 호출*/
 			$.get(url, params, function(result) {
 				if (result == 'delete') {
-					location = '../';
+					//어디로 어떻게 이동?:javascript로 페이지 이동 location
+					location = '../gallery/list';
 				} else {
 					alert('삭제 실패 : ' + result);
 				}
 			});
-      </code></pre>
+		});
+	});```
 
