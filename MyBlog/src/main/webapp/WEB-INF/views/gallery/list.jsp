@@ -16,15 +16,15 @@
 		/**edit의 첨부파일 삭제랑 거의 비슷*/
 
 		//	삭제눌렀을때 alert
-		$('#delete-btn').click(function(e) {
+		$('.delete-btn').click(function(e) {
 			e.preventDefault();
+			//	this는 클릭된 a태그(삭제버튼)
 			var imageId = $(this).data('target');
-			var result = confirm("사진을 삭제할까요? "+ imageId);
+			var result = confirm("사진을 삭제할까요? ");
 
-			if (!result)
-				return;
+			if (!result) return;
 
-			var url = '../delete';
+			var url = '../gallery/delete';
 			var params = {
 				imageId : imageId
 			};
@@ -102,7 +102,7 @@
 							<%-- <c:if test="${not empty USER}"> --%>
 								<div class="text-center">
 									
-									<a href="#" id="delete-btn" data-target="${image.imageId}" class="mr-4" style="color: gray;">
+									<a href="#" class="delete-btn" data-target="${image.imageId}" class="mr-4" style="color: gray;">
 										<i class="fas fa-trash mr-2" style="color: gray;"></i> DELETE
 									</a>
 									

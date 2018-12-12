@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/gallery")
 @Slf4j
-public class MyGalleryController {
+public class MyGalleryController2 {
 
 	@Autowired
 	MyGalleryImageService service;
