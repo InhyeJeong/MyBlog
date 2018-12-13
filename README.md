@@ -23,13 +23,15 @@ Mybatis / JDBC / json / tinymce / Ajax
 ## 메뉴별 기능 소개
 
 ### 1. Home
-- 게시판 업로드 및 삭제(ADMIN 계정만 사용가능)
+- 메인화면에 게시물 리스트 구현
+- 게시물 업로드 및 삭제 (ADMIN 계정만 사용가능)
+- 글 뿐만 아니라 사진 업로드 가능
 - 각 게시물 별 조회수 기록
-- 로그인 인터셉터
 
 ### 1-1. LogIn (ADMIN 계정만 사용가능)
 
-- 로그인 기능( 개인 운영용이기 때문에 db로 아이디 등록, 비밀번호 암호화) 
+- 로그인 기능(개인 운영용이기 때문에 db로 아이디 등록, 비밀번호 암호화) 
+- 로그인 인터셉터 (메인화면의 posting, gallery의 Addgallery)
 
 ### 2. About
 
@@ -37,8 +39,10 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 3. Gallery
 
-- 사진 업로드/삭제(Ajax) 가능(ADMIN 계정만 사용가능)
+- 사진 업로드 (ADMIN 계정만 사용가능)
+- 삭제(Ajax)기능 (ADMIN 계정만 사용가능)
 - LightBox를 활용하여 사진 뷰
+- 업로드 순서대로 정렬
 
 ### 4. Contact
 
