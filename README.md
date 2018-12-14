@@ -25,7 +25,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 ### 1. Home
 - 메인화면에 게시물 리스트 구현
 - 게시물 업로드 및 **삭제(Ajax)** (ADMIN 계정만 사용가능)
-- TinyMce를 활용하여 글 및 [사진업로드](./MyBlog/src/main/webapp/WEB-INF/create.jsp) 가능
+- TinyMce를 활용하여 글 및 [사진업로드](./MyBlog/src/main/webapp/WEB-INF//create.jsp) 가능
 - 각 게시물 별 조회수 기록
 
 ### 1-1. LogIn (ADMIN 계정만 사용가능)
