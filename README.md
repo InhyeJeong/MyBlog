@@ -88,7 +88,7 @@ public class FileView extends AbstractView {
   
 #### Ajax
 * 게시물 삭제 및 댓글 작성 Ajax 처리
-자세한 내용은 Home메뉴의 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views/view.jsp) 및 Gallery메뉴의 [list.jsp](./MyBlog/src/main/webapp/WEB-INF/views/list.jsp)폴더에 있습니다.
+자세한 내용은 Home메뉴의 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views/view.jsp) 및 Gallery메뉴의 [list.jsp](./MyBlog/src/main/webapp/WEB-INF/views/gallery/list.jsp)폴더에 있습니다.
 ```dart
 	$(function() {
 		//	삭제눌렀을때 alert
