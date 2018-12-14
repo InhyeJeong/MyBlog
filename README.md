@@ -87,7 +87,7 @@ public class FileView extends AbstractView {
 ```
   
 #### Ajax
-* 게시물 삭제 및 댓글 작성 Ajax 처리
+* 게시물 삭제 Ajax 처리
 자세한 내용은 Home메뉴의 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views/view.jsp) 및 Gallery메뉴의 [list.jsp](./MyBlog/src/main/webapp/WEB-INF/views/gallery/list.jsp)폴더에 있습니다.
 ```dart
 	$(function() {
@@ -117,4 +117,22 @@ public class FileView extends AbstractView {
 		});
 	});
 ```
+* [MyGalleryController](./MyBlog/src/main/java/edu/iot/myblog/controller/MyGalleryController.java)
 
+```dart
+	:
+	:
+	@ResponseBody
+	@RequestMapping(value="delete",
+					method=RequestMethod.GET,
+					produces = "text/plain; charset=utf8")
+	public String delete(MyGalleryImage mgallery) {
+		log.warn("delete 컨트롤러 실행됨");
+		try {
+			service.delete(mgallery);
+			return "delete";
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+	}
+```
