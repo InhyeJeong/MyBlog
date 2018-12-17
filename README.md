@@ -13,7 +13,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 * [**MyBlog Link**](http://13.209.26.216:8080/travelhelper/)
 <p align="center">
-<img src="./images/myblog_main.png" width="300">	
+<img src="./images/myblog_main.png" width="300" >	
 </p>
 
 
