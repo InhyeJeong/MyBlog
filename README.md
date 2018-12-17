@@ -27,7 +27,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 1. Home
 <p align="center">
-<img src="./images/myblog_board.png" width="300" >	
+<img src="./images/myblog_board2.png" width="300" >	
 </p>
 
 - 메인화면에 게시물 리스트 구현
