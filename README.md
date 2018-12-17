@@ -13,7 +13,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 * [**MyBlog Link**](http://13.209.26.216:8080/travelhelper/)
 <p align="center">
-<img src="./images/myblog_main.png" width="300" >	
+<img src="./images/myblog_main.png" width="500" >	
 </p>
 
 
@@ -27,7 +27,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 1. Home
 <p align="center">
-<img src="./images/myblog_board.png" width="300" >	
+<img src="./images/myblog_board2.png" width="600" >	
 </p>
 
 - 메인화면에 게시물 리스트 구현
