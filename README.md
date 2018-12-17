@@ -23,13 +23,15 @@ Mybatis / JDBC / json / tinymce / Ajax
 ## 메뉴별 기능 소개
 
 ### 1. Home
-- 게시판 업로드 및 삭제(ADMIN 계정만 사용가능)
+- 메인화면에 게시물 리스트 구현
+- 게시물 업로드 및 **삭제(Ajax)** (ADMIN 계정만 사용가능)
+- TinyMce를 활용하여 글 및 [사진업로드](./MyBlog/src/main/webapp/WEB-INF/views/create.jsp) 가능
 - 각 게시물 별 조회수 기록
-- 로그인 인터셉터
 
 ### 1-1. LogIn (ADMIN 계정만 사용가능)
 
-- 로그인 기능( 개인 운영용이기 때문에 db로 아이디 등록, 비밀번호 암호화) 
+- 로그인 기능(개인 운영용이기 때문에 db로 아이디 등록, 비밀번호 **암호화**) 
+- 로그인 인터셉터 (메인화면의 posting, gallery의 Addgallery)
 
 ### 2. About
 
@@ -37,8 +39,10 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 3. Gallery
 
-- 사진 업로드/삭제(Ajax) 가능(ADMIN 계정만 사용가능)
+- 사진 업로드 (ADMIN 계정만 사용가능)
+- **삭제(Ajax)** 기능 (ADMIN 계정만 사용가능)
 - LightBox를 활용하여 사진 뷰
+- 업로드 순서대로 **정렬**
 
 ### 4. Contact
 
@@ -83,8 +87,8 @@ public class FileView extends AbstractView {
 ```
   
 #### Ajax
-* 게시물 삭제 및 댓글 작성 Ajax 처리
-자세한 내용은 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views) 폴더에 있습니다.
+* 게시물 삭제 Ajax 처리
+자세한 내용은 Home메뉴의 [view.jsp](./MyBlog/src/main/webapp/WEB-INF/views/view.jsp) 및 Gallery메뉴의 [list.jsp](./MyBlog/src/main/webapp/WEB-INF/views/gallery/list.jsp)폴더에 있습니다.
 ```dart
 	$(function() {
 		//	삭제눌렀을때 alert
@@ -113,4 +117,23 @@ public class FileView extends AbstractView {
 		});
 	});
 ```
+* [MyGalleryController](./MyBlog/src/main/java/edu/iot/myblog/controller/MyGalleryController.java)
 
+```dart
+	:
+	:
+	@ResponseBody
+	@RequestMapping(value="delete",
+					method=RequestMethod.GET,
+					produces = "text/plain; charset=utf8")
+	public String delete(MyGalleryImage mgallery) {
+		log.warn("delete 컨트롤러 실행됨");
+		try {
+			service.delete(mgallery);
+			return "delete";
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+	}
+}
+```
