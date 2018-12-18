@@ -56,9 +56,11 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 4. Contact
 
+<p align="center">
+<img src="./images/contactme.png" width="300" >	
+</p>
+
 * 방문자가 이름, 연락처, 이메일, 내용을 작성하면 **연동된 ADMIN 이메일**로 전송되는 기능
-
-
 
 
 <br>
