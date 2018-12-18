@@ -6,8 +6,7 @@
 
 <tiles-definitions>
 	<!-- default : 템플릿에 설정된 페이지의 구성 요소에 대한 실제 파일 지정 -->
-	<definition name="default"
-		template="/WEB-INF/views/layouts/default_template.jsp">
+	<definition name="default" template="/WEB-INF/views/layouts/default_template.jsp">
 		<put-attribute name="header"
 			value="/WEB-INF/views/layouts/default/header.jsp" />
 		<put-attribute name="menu"
@@ -30,11 +29,11 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/editing.jsp" />
 	</definition>
-
+	
+	
 
 	<!-- 뷰의 이름이 home인 경우 default를 확장하여 아래 설정에 의해서 페이지를 만들게 됩니다. -->
-	<definition name="home" extends="default"
-		template="/WEB-INF/views/layouts/home_template.jsp">
+	<definition name="home" extends="default" template="/WEB-INF/views/layouts/home_template.jsp">
 		<put-attribute name="body"
 			value="/WEB-INF/views/home.jsp" />
 	</definition>
@@ -44,6 +43,8 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/view.jsp" />
 	</definition>
+
+	
 
 
 	<!--첫번 째*: 폴더결정, 두번 째*:파일 결정, 원하는 레벨 추가해도됨 -->

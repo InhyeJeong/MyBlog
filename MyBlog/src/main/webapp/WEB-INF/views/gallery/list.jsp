@@ -65,12 +65,12 @@
 	<iot:page-animate-header title="My GALLERY" />
 
 	<div>
-
-		<%-- <c:if test="${not empty USER}"> --%>
-		<div class="float-right">
-			<a href="create"><i class="fas fa-plus"></i> Add Gallery</a>
-		</div>
-		<%-- </c:if> --%>
+		<!--로그인 사용자만 사진 추가가능 -->
+		<c:if test="${not empty USER}">
+			<div class="float-right">
+				<a href="create"><i class="fas fa-plus"></i> Add Gallery</a>
+			</div>
+		</c:if>
 	</div>
 	<br><br>
 
@@ -99,7 +99,8 @@
 								</a>
 
 							</figure>
-							<%-- <c:if test="${not empty USER}"> --%>
+							<!-- 로그인 사용자만 삭제 가능 -->
+							<c:if test="${not empty USER}">
 								<div class="text-center">
 									
 									<a href="#" class="delete-btn" data-target="${image.imageId}" class="mr-4" style="color: gray;">
@@ -107,7 +108,7 @@
 									</a>
 									
 								</div>
-							<%-- </c:if> --%>
+							 </c:if>
 						</div>
 					</c:forEach>
 				</div>

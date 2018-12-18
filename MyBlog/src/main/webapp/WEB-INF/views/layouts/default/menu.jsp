@@ -30,7 +30,7 @@
               <a class="nav-link" href="${context}/gallery/list">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="${context}/contact/mailfForm">Contact</a>
+              <a class="nav-link" href="${context}/contact/mailForm">Contact</a>
             </li>
           
            

@@ -42,7 +42,7 @@
 </script>
 
 <br><br>
-<header >
+<header>
 <!-- 사용자 태그라이브러리 사용  -->
 <%@ taglib tagdir="/WEB-INF/tags/util" prefix="iot"%>
 
