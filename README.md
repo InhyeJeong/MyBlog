@@ -5,11 +5,13 @@ Spring MVC 패턴으로 만든 개인 블로그 반응형 웹사이트 입니다
 
 * 2018년 11월 ~ (진행중)
 *  이 프로젝트의 **Tech Stack**
-<pre><code>
+```dart
 jQuery / javascript / java / lombok / css3 /
 html5 / oracle / tomcat8.5 / Spring / MDBootstrap /
 Mybatis / JDBC / json / tinymce / Ajax
-</pre></code>
+```
+
+
 
 * [**MyBlog Link**](http://13.209.26.216:8080/travelhelper/)
 <p align="center">
@@ -56,9 +58,11 @@ Mybatis / JDBC / json / tinymce / Ajax
 
 ### 4. Contact
 
+<p align="center">
+<img src="./images/contactme.png" width="600" >	
+</p>
+
 * 방문자가 이름, 연락처, 이메일, 내용을 작성하면 **연동된 ADMIN 이메일**로 전송되는 기능
-
-
 
 
 <br>
