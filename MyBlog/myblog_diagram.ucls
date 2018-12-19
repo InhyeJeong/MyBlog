@@ -49,7 +49,7 @@
   </class>  
   <class id="6" language="java" name="edu.iot.myblog.controller.ContactController" project="MyBlog" 
     file="/MyBlog/src/main/java/edu/iot/myblog/controller/ContactController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1569" y="183"/>    
+    <position height="-1" width="-1" x="1567" y="189"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -226,92 +226,108 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="25">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <association id="26">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="27" name="dao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="28" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="29">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="22"/>  
-  </realization>  
-  <dependency id="30">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <association id="31">    
+  <class id="25" language="java" name="edu.iot.common.model.MailInfo" project="SpringCommon" 
+    file="/SpringCommon/src/main/java/edu/iot/common/model/MailInfo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="947" y="460"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="edu.iot.common.service.JavamailServiceImpl" project="SpringCommon" 
+    file="/SpringCommon/src/main/java/edu/iot/common/service/JavamailServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1702" y="372"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="edu.iot.common.service.JavaMailService" project="SpringCommon" 
+    file="/SpringCommon/src/main/java/edu/iot/common/service/JavaMailService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1511" y="371"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="28">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="32" name="service">        
+      <attribute id="29" name="service">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="33" minimum="0" maximum="1">        
+      <multiplicity id="30" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="34">    
+  <association id="31">    
     <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="35" name="dao">        
+      <attribute id="32" name="dao">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="36" minimum="0" maximum="1">        
+      <multiplicity id="33" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="37">    
+  <dependency id="34">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <realization id="35">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="19"/>  
   </realization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="21"/>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <realization id="37">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="27"/>  
   </realization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <association id="40">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="41" name="dao">        
-        <position height="0" width="0" x="125" y="2"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="125" y="2"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="43">    
+  <generalization id="38">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <dependency id="44">    
+  <association id="39">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="40" name="service">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <dependency id="43">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="18"/>  
   </dependency>  
-  <dependency id="45">    
-    <end type="SOURCE" refId="23"/>    
+  <dependency id="44">    
+    <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="16"/>  
   </dependency>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
   <association id="46">    
-    <end type="SOURCE" refId="7" navigable="false">      
+    <end type="SOURCE" refId="8" navigable="false">      
       <attribute id="47" name="service">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -319,37 +335,69 @@
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="49">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="50">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="51">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <generalization id="52">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <association id="53">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="54" name="service">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="55" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="49">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <dependency id="50">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="52">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="53" name="service">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="56" name="dao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="58">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="59">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="60" name="dao">        
+        <position height="0" width="0" x="125" y="2"/>      
+      </attribute>      
+      <multiplicity id="61" minimum="0" maximum="1">        
+        <position height="0" width="0" x="125" y="2"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <realization id="63">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -7,6 +7,15 @@
         <dependent-module archiveName="SpringCommon.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SpringCommon/SpringCommon">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="javax.mail-api-1.5.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/student/Downloads/javax.mail-api-1.5.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="activation.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/student/Downloads/activation.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.mail-1.5.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/student/Downloads/javax.mail-1.5.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="myblog"/>
 	</wb-module>
