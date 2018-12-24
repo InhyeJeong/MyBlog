@@ -18,7 +18,7 @@ Apache Commons file upload / Apache Commons IO / thumbnailator / jackson
 - maven과 관련된 공통 data들을 모아둔 프로젝트입니다.
 - 구성 : dao / model / service/ exception / 공통 spring 설정파일 / database설정 / mapper
 
-*  이 프로젝트의 **Tech Stack**
+##  이 프로젝트의 **Tech Stack**
 ```dart
 jQuery / javascript / java / lombok / css3 /
 html5 / oracle / tomcat8.5 / Spring / MDBootstrap /
