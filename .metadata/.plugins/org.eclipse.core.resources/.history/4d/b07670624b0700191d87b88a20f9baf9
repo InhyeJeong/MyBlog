@@ -1,0 +1,4 @@
+database.driver=oracle.jdbc.driver.OracleDriver
+database.url=jdbc:oracle:thin:@oracle11gr2.c3xjxultm3dz.us-east-1.rds.amazonaws.com:1521:ORCL
+database.username=tonz
+database.password=hellotonz

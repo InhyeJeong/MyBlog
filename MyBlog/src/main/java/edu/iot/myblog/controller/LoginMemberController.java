@@ -40,6 +40,8 @@ public class LoginMemberController {
 		try {
 			LoginMember me = service.login(login.getUserId(), login.getPassword());//member로 받아서 (admin인지 등등 구별하려고)
 			//성공하면 세션에 정보를 추가하고, 리다이렉트
+			//	"Key"를 사용하여 객체를 세션에 바인딩한다.
+			//	Value는 값으로 들어올 자료형을 예측할 수 없기에 Object형으로 업캐스팅하여 모두 받아낸다.
 			session.setAttribute("USER", me);
 			
 			String url = login.getUrl();

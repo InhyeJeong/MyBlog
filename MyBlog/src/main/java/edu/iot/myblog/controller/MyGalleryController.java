@@ -162,7 +162,7 @@ public class MyGalleryController {
 		String serverFileName = timestamp + "_" + fname;
 
 		// 업로드 파일 재배치
-		File dest = new File("c:/temp/upload/" + serverFileName);
+		File dest = new File("/upload/" + serverFileName);
 		imageFile.transferTo(dest);// 내가원하는 위치로 파일 이동하는 MultipartFile의 메서드
 
 		// 썸네일 이미지 생성 : SpringCommon프로젝트 >util패키지
@@ -187,7 +187,7 @@ public class MyGalleryController {
 		MyGalleryImage image = service.findById(imageId);
 		//System.out.println(image);
 		// 서버의 파일명 
-		String path = "c:/temp/upload/";
+		String path = "/upload/";
 		
 		if(mode.equals("thumb")) {
 			path+="thumb/";
@@ -218,7 +218,8 @@ public class MyGalleryController {
 		log.warn("delete 컨트롤러 실행됨");
 		try {
 			service.delete(mgallery);
-			return "delete";
+//			list.jsp의 jQuery Ajax 호출부분의 result 값과 return('delete')과 일치 시켜야함
+			return "delete";	
 		} catch (Exception e) {
 			return e.getMessage();
 		}

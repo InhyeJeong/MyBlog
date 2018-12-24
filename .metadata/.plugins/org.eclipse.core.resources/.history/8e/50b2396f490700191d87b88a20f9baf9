@@ -1,0 +1,33 @@
+package edu.iot.common.service;
+
+import java.util.Map;
+
+
+
+import edu.iot.common.model.Gallery;
+import edu.iot.common.model.GalleryImage;
+
+// gallery Service 인터페이스
+
+public interface GalleryService {
+	// list에서 사용할 페이지 목록얻기 MemberService의 getPage와 같다.
+	Map<String, Object> getPage(int page, String orderBy) throws Exception;
+	
+	
+	/** GalleryController의 createSubmit 메서드에서 사용됨 */
+	void create(Gallery gallery) throws Exception;
+
+	/** GalleryController의 updateForm 메서드에서 사용됨*/
+	Gallery findById(long galleryId) throws Exception;
+
+	/** GalleryController의 updateSubmit 메서드에서 사용됨*/
+	void update(Gallery gallery)throws Exception;
+	
+	/**파일 업로드를 위한 추가*/
+	void addImage(GalleryImage image) throws Exception;
+	
+	/**갤러리 이미지 보여주기 위해 추가*/
+	GalleryImage getImage(long imageId)throws Exception;
+	
+	
+}

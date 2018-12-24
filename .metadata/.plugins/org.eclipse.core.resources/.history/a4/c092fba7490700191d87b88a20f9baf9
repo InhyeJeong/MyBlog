@@ -1,0 +1,22 @@
+package edu.iot.common.dao;
+
+import java.util.List;
+
+import edu.iot.common.model.Gallery;
+import edu.iot.common.model.GalleryImage;
+
+// gallery 인터페이스
+public interface GalleryDao extends CrudDao<Gallery, Long> {
+	void addImages(GalleryImage image) throws Exception;
+	
+	
+	/**gallery 이미지 목록얻기위해 추가*/
+	List<GalleryImage> getImages(long galleryId) throws Exception;
+	
+	/**갤러리 이미지 보여주기 위해 추가*/
+	GalleryImage getImage(long imageId) throws Exception;
+	
+	/**조회수 증가 */
+	// sql문에서 update : 리턴타입이 integer이거나 void
+	Integer increaseReadCnt(long galleryId) throws Exception;
+}

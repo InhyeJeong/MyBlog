@@ -1,0 +1,4 @@
+database.driver=oracle.jdbc.driver.OracleDriver
+database.url=jdbc:oracle:thin:@70.12.244.171:8080:xe
+database.username=tonz
+database.password=1234

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+
+
+
+	<!-- 사용할 데이터베이스 설정 및 커넥션 풀 관리/Common DBCP로 데이터베이스 커넥션 관리:⁃org.apache.commons.dbcp.BasicDataSource -->
+	<context:property-placeholder
+		location="classpath:database.properties" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.username}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+
+
+
+
+	<!-- 트랜잭션 처리 설정 : DataSourceTransactionManager -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" /><!-- 어노테이션으로 관리한다는 뜻 -->
+	
+	
+	
+	
+	
+	<!--여기까지는 일반적으로 쓰이는 것  -->
+	<!-- MyBatis 설정 2가지는 수정해줘야함 -->
+	
+	<!-- MyBatis 설정 2가지는 수정해줘야함 :SpringCommon의 database-context에서 옮겨옴 >다시 가져옴 -->
+	
+	
+	<!-- SqlSessionFactoryBean 빈 객체 설정  : common.model로 수정-->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="edu.iot.common.model" />
+		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>edu.iot.**.dao</value>
+				<value>classpath:mapper/**/*-mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Dao 자동 생성 빈 : ** 두개 써주면서 수정해결-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="edu.iot.**.dao" />
+	</bean>
+	
+</beans>

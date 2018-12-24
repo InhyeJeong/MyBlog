@@ -16,7 +16,5 @@ public class AboutController {
 	/** 목록보기 /list */
 	@RequestMapping(value = "view", method=RequestMethod.GET)
 	public void list(Model model) throws Exception {
-
-		
 	}
 }

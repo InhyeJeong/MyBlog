@@ -37,6 +37,8 @@ public class ContactController {
 		service.send(title, content);
 		return "redirect:/contact/mailSendOk";
 	}
+	
+	/** 메일 전송 성공시 보여질 jsp*/
 	@RequestMapping(value = "mailSendOk", method=RequestMethod.GET)
 	public void mailSendOk() throws Exception {
 		

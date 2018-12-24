@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.iot.common.dao.MyGalleryImageDao">
+
+	<select id="count" resultType="int">
+		<![CDATA[
+		select count(*)
+		from mgallery_image ]]>
+	</select>
+	
+	<!-- 사진업로드 순서대로 정렬-->
+	<select id="getList" resultType="MyGalleryImage">
+		<![CDATA[
+		select *
+		from mgallery_image 
+		order by reg_date desc]]>
+	</select>
+
+
+	<select id="findById" parameterType="long" resultType="MyGalleryImage">
+		<![CDATA[
+		select *
+		from mgallery_image
+		where image_id = #{imageId} ]]>
+	</select>
+
+	<insert id="insert" parameterType="MyGalleryImage"
+			useGeneratedKeys="true"
+			keyColumn="image_id" keyProperty="imageId">
+		<![CDATA[
+		insert into mgallery_image (
+				image_id,
+				title, description, read_cnt, reg_date, update_date
+		)
+		values	(
+				mgallery_image_seq.nextval,
+				#{title}, #{description}, 0, sysdate, sysdate
+		)
+		]]>
+	</insert>
+
+	<!--GalleryImage DB 저장 : insert문 추가 -->
+	<insert id="addImage" parameterType="MyGalleryImage">
+		<![CDATA[
+		insert into mgallery_image (
+				image_id,
+				title, file_name, server_file_name,
+				source
+		)
+		values	(
+				mgallery_image_seq.nextval,
+				#{title}, #{fileName}, #{serverFileName},
+				#{source}
+		)
+		]]>
+	</insert>
+	
+
+	<update id="update" parameterType="MyGalleryImage">
+	<![CDATA[
+		update mgallery_image set
+			title = #{title},
+			description = #{description},
+			file_name = #{fileName},
+			server_file_name = #{serverFileName},
+			source = #{source},
+			update_date = sysdate
+		where image_id = #{imageId}
+	]]></update>
+
+	<!-- 게시글 조회수 -->
+	<update id="increaseReadCnt" parameterType="Long">
+		UPDATE mgallery_image
+		SET READ_CNT = READ_CNT +1
+		WHERE image_Id = #{imageId}
+	</update>
+	
+	
+	<delete id="delete" parameterType="MyGalleryImage">
+		<![CDATA[
+		delete from mgallery_image
+		where image_id = #{imageId}
+		]]>
+	</delete>
+	
+</mapper>
+
