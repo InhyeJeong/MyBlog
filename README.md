@@ -77,6 +77,57 @@ Mybatis / JDBC / json / tinymce / Ajax
 </p>
 
 * 방문자가 이름, 연락처, 이메일, 내용을 작성하면 **연동된 ADMIN 이메일**로 전송되는 기능
+```dart
+@Slf4j
+@Service
+public class JavamailServiceImpl implements JavaMailService {
+
+	@Override
+	public void send(String title, String content) throws Exception {
+		String user = "yourEmailAddress";
+		String password = "yourEmailPassWord";
+
+		// SMTP 서버 정보를 설정한다.
+		Properties prop = new Properties();
+		prop.put("mail.smtp.host", "smtp.gmail.com");
+		prop.put("mail.smtp.port", 465);
+		prop.put("mail.smtp.auth", "true");
+		prop.put("mail.smtp.ssl.enable", "true");
+		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+		Session session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user, password);
+			}
+		});
+
+		try {
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(user));
+
+			// 수신자메일주소
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress("yourEmailAddress"));
+
+			// Subject
+			message.setSubject(title); // 메일 제목을 입력
+
+			// Text
+			message.setText(content); // 메일 내용을 입력
+
+			// send the message
+			Transport.send(message); //// 전송
+			log.info("message sent successfully...");
+
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+
+	}
+
+}
+```
+
 
 
 <br>
