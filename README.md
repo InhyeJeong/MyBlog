@@ -220,8 +220,8 @@ public class FileView extends AbstractView {
 }
 ```
 
-#### iBatis annotation
-* mapper가 아닌 apache iBatis annotation으로 db연결
+#### MyBatis annotation
+* mapper.xml가 아닌 apache MyBatis annotation으로 db연결
 * 자세한 내용은 [HboardDao.java](./SpringCommon/src/main/java/edu/iot/common/dao/HboardDao.java) 및 [LoginMemberDao.java](./SpringCommon/src/main/java/edu/iot/common/dao/LoginMemberDao.java)에 있습니다.
 ```java
 :
