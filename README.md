@@ -137,6 +137,7 @@ public class JavamailServiceImpl implements JavaMailService {
 #### 사용자 정의 뷰 사용
 
 * Gallery 메뉴에서 Lightbox **이미지 출력**에 [사용자 정의 뷰(FileView)](./MyBlog/src/main/java/edu/iot/myblog/view)를 사용했습니다.
+* 자세한 내용은 [JavamailServiceImpl.java](./SpringCommon/src/main/java/edu/iot/common/service/JavamailServiceImpl.java)폴더에 있습니다.
 
 ```dart
 @Component("fileView")
