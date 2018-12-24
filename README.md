@@ -219,3 +219,41 @@ public class FileView extends AbstractView {
 	}
 }
 ```
+
+#### iBatis annotation
+* mapper가 아닌 apache iBatis annotation으로 db연결
+* 자세한 내용은 [HboardDao.java](./SpringCommon/src/main/java/edu/iot/common/dao/HboardDao.java) 및 [LoginMemberDao.java](./SpringCommon/src/main/java/edu/iot/common/dao/LoginMemberDao.java)에 있습니다.
+```java
+:
+:
+public interface HboardDao {
+	// update
+	@Update({"UPDATE Hboard SET",
+			"read_cnt = read_cnt + 1", 
+			"WHERE hboard_id=#{hboardId}" })
+	void increaseReadCnt(long hboardId) throws Exception;
+	
+	// getList
+	//	date 다른 형식으로 출력하기 위해 쿼리문에 직접 입력(TOCHAR)
+	@Select({"select hboard_id, title, subtitle, writer, content, read_cnt, reg_date, update_date, str_reg_date",
+			"from( select row_number()",
+					"OVER (ORDER BY reg_date DESC) AS SEQ, hboard_id, title, subtitle, writer, content, read_cnt, reg_date, update_date, TO_CHAR(reg_date,'Month DD, YYYY','NLS_DATE_LANGUAGE=ENGLISH') as str_reg_date",
+					"from hboard )",
+					"order by hboard_id desc"})
+	List<Hboard> getList() throws Exception;
+	
+	//count
+	@Select("SELECT count(*) FROM Hboard")
+	int count(long hboardId) throws Exception;
+	
+	//insert
+	@Insert({"insert into Hboard(hboard_id, title, subtitle, writer, read_cnt, content, reg_date, update_date)", 
+			"values(Hboard_SEQ.NEXTVAL,#{title}, #{subtitle}, #{writer}, 0, #{content}, SYSDATE, SYSDATE)"
+	})
+	@Options(useGeneratedKeys = true,
+	keyColumn = "hboard_id", keyProperty = "hboardId")
+	int insert(Hboard hboard) throws Exception;
+	
+	:
+	:
+```
