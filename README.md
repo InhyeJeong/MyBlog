@@ -16,7 +16,7 @@ Apache Commons file upload / Apache Commons IO / thumbnailator / jackson
 
 ## [SpringCommon](./SpringCommon) Project
 - maven과 관련된 공통 data들을 모아둔 프로젝트입니다.
-- 구성 : dao / model / service/ exception / 공통 spring 설정파일 / database설정 / mapper
+- 구성 : [dao](./SpringCommon/src/main/java/edu/iot/common/dao) / [model](./SpringCommon/src/main/java/edu/iot/common/model) / [service](./SpringCommon/src/main/java/edu/iot/common/service)/ [exception](./SpringCommon/src/main/java/edu/iot/common/exception) / [공통 spring 설정파일](./SpringCommon/src/main/resources/config) / [database설정](./SpringCommon/src/main/resources/database.properties) / [mapper](./SpringCommon/src/main/resources/mapper/mygallery-mapper.xml)
 
 ##  이 프로젝트의 **Tech Stack**
 ```dart
