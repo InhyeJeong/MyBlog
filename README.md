@@ -79,7 +79,7 @@ Mybatis / JDBC / json / tinymce / Ajax
 * 방문자가 이름, 연락처, 이메일, 내용을 작성하면 **연동된 ADMIN 이메일**로 전송되는 기능
 * 자세한 내용은 [JavamailServiceImpl.java](./SpringCommon/src/main/java/edu/iot/common/service/JavamailServiceImpl.java)폴더에 있습니다.
 
-```dart
+```java
 @Slf4j
 @Service
 public class JavamailServiceImpl implements JavaMailService {
