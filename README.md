@@ -4,6 +4,20 @@
 Spring MVC 패턴으로 만든 개인 블로그 반응형 웹사이트 입니다.
 
 * 2018년 11월 ~ (진행중)
+* [base](./base) Project
+- maven 설정 프로젝트입니다.
+- MyBlog 프로젝트는 base 프로젝트의 pom.xml을 parent로 상속받아 사용합니다.
+- dependecy 설정
+
+```dart
+유효성검사 / Tiles 라이브러리 / MyBatis 디펜던시 설정 / json변환 dependency /
+Apache Commons file upload / Apache Commons IO / thumbnailator / jackson
+```
+
+* [SpringCommon](./SpringCommon) Project
+- maven과 관련된 공통 data들을 모아둔 프로젝트입니다.
+- 구성 : dao / model / service/ exception / 공통 spring 설정파일 / database설정 / mapper
+
 *  이 프로젝트의 **Tech Stack**
 ```dart
 jQuery / javascript / java / lombok / css3 /
