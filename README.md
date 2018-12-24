@@ -3,7 +3,7 @@
 
 Spring MVC 패턴으로 만든 개인 블로그 반응형 웹사이트 입니다.
 
-* 2018년 11월 ~ (진행중)
+* 2018년 11월 ~ 12월
 ## [base](./base) Project
 - maven 설정 프로젝트입니다.
 - MyBlog 프로젝트는 base 프로젝트의 pom.xml을 parent로 상속받아 사용합니다.
