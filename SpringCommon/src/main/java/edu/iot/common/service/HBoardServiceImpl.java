@@ -30,8 +30,6 @@ public class HBoardServiceImpl implements HBoardService {
 	public Hboard findById(long hboardId) throws Exception {
 		dao.increaseReadCnt(hboardId); // 조회수 증가
 		Hboard hboard = dao.findById(hboardId);
-		//hboard.setAttachList(attachmentDao.getList(boardId));
-		// Dao에서 join을 활용하지 않고 구현했기때문에 setAttach를 통해 첨부파일 데이터를 board에 추가해줌
 		return hboard;
 	}
 
@@ -40,22 +38,18 @@ public class HBoardServiceImpl implements HBoardService {
 		int result = dao.update(hboard);
 		if(result == 0) {
 			throw new  IDMissmatchException();
-		}
-	//??
-		
+		}		
 	}
 
 	@Override
 	public void delete(Hboard hboard) throws Exception {
-		
 		dao.delete(hboard);
 		
 	}
+	
 	//	메인화면에 게시물 list 받아오는 메서드
 	@Override
 	public List<Hboard> getList() throws Exception {
-		//System.out.println(dao.getList());
-
 		return dao.getList();
 		
 	}

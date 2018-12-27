@@ -18,10 +18,8 @@ public interface HboardDao {
 			"read_cnt = read_cnt + 1", 
 			"WHERE hboard_id=#{hboardId}" })
 	void increaseReadCnt(long hboardId) throws Exception;
-	//void delete (Board board) throws Exception; //attachment삭제 때문에 필요없음
-	
-	
-	
+
+
 	// getList
 	//	date 다른 형식으로 출력하기 위해 쿼리문에 직접 입력(TOCHAR)
 	@Select({"select hboard_id, title, subtitle, writer, content, read_cnt, reg_date, update_date, str_reg_date",

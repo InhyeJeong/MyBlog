@@ -13,8 +13,6 @@
 
 <script>
 	$(function() {
-		/**edit의 첨부파일 삭제랑 거의 비슷*/
-
 		//	삭제눌렀을때 alert
 		$('.delete-btn').click(function(e) {
 			e.preventDefault();

@@ -22,11 +22,6 @@
 			
 			<form:form commandName="mgallery">
 			
-			
-				
-			<!-- 방법2: login한 사용자만 submit할 수 있도록 hidden으로 처리 -->
-		<%-- <input type="hidden" name="owner" value="${gallery.owner}"> --%>
-		
 				<div class="md-form">
 					<label for="title"> Title</label>
 					<form:input path="title" class="form-control"/>
@@ -49,7 +44,6 @@
 			</form:form>
 			<br><br>
 			
-			<!-- 이부분을 create.jsp로 옮기기 -->
 			
 			<!-- 파일 업로드 FORM 구성 : Binary data처리 (form태그 라이브러리 이후에 구성, 일반 form으로 구성) -->
 			<!-- http는 문자열만 가능, 문자열로 변환처리는 알아서 해줌, 우리는 아래의 사진 파일 제출 폼 구성 -->

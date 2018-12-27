@@ -32,10 +32,6 @@
 
 <!-- Main Content -->
 
-
-<!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-<!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-<!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
 <br>
 <br>
 <hr>

@@ -19,27 +19,28 @@ import edu.iot.common.service.LoginMemberService;
 @Controller
 @RequestMapping("/account")
 public class LoginMemberController {
+	//	로그인멤버서비스 연결
 	@Autowired
 	LoginMemberService service;
 	
-	/**로그인 모델 추가 후, 인터셉터를 이용한 로그인 처리*/
+	//	로그인 Form
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String loginForm(Login login,
 						@ModelAttribute("url") String url,
 						@ModelAttribute("reason") String reason){
-		login.setUrl(url);
-		login.setReason(reason);
+		login.setUrl(url);	//	url설정
+		login.setReason(reason);	
 		return "account/login";
 	}
 		
-	/**로그인 모델 추가 후, 인터셉터를 이용한 로그인 처리*/
-	@RequestMapping(value="/login", method=RequestMethod.POST)// 주로 post에서 service이용하여 로직처리함
+	//	로그인 Submit
+	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String loginSubmit(Login login, HttpSession session,//submit하면 userId,password
-					Model model)throws Exception { // Model이 필요해서 매개변수로 받아버림
+					Model model)throws Exception {
 		
 		try {
-			LoginMember me = service.login(login.getUserId(), login.getPassword());//member로 받아서 (admin인지 등등 구별하려고)
-			//성공하면 세션에 정보를 추가하고, 리다이렉트
+			LoginMember me = service.login(login.getUserId(), login.getPassword());//me로 받아서 (user구별)
+			//	성공하면 세션에 정보를 추가하고, 리다이렉트
 			//	"Key"를 사용하여 객체를 세션에 바인딩한다.
 			//	Value는 값으로 들어올 자료형을 예측할 수 없기에 Object형으로 업캐스팅하여 모두 받아낸다.
 			session.setAttribute("USER", me);
@@ -49,15 +50,18 @@ public class LoginMemberController {
 			
 			return "redirect:/";
 		} catch (LoginFailException e) {
-			//실패하면 포워드 // 실패해서 되돌아왔을 때 다시 채워지는 문자열은 login.jsp의 ${}부분
+			// 실패해서 되돌아왔을 때 다시 채워지는 문자열은 login.jsp의 ${}부분
 			model.addAttribute("error", e.getMessage());
+			//	로그인 실패하면 포워드
 			return "account/login";
 		}
 	}
-	
+	//	로그아웃
 	@RequestMapping(value="/logout")
 	public String logout(HttpSession session) {
+		//	세션에서 지우기
 		session.invalidate();
+		//	home으로 리다이렉트
 		return "redirect:/";
 	}
 	

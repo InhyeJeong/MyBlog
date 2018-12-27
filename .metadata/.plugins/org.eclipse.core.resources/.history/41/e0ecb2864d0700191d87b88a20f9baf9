@@ -1,0 +1,4 @@
+database.driver=oracle.jdbc.driver.OracleDriver
+database.url=jdbc:oracle:thin:@XXXXXXX:XXXX:XXXX
+database.username=X
+database.password=X

@@ -1,0 +1,51 @@
+package edu.iot.common.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import edu.iot.common.dao.LoginMemberDao;
+import edu.iot.common.exception.LoginFailException;
+import edu.iot.common.model.LoginMember;
+import edu.iot.common.sec.SHA256Util;
+@Service
+public class LoginMemberServiceImpl implements LoginMemberService {
+	
+	@Autowired
+	LoginMemberDao dao;
+	
+	@Override
+	public LoginMember findById(String userId) throws Exception {
+		
+		return dao.findById(userId);
+	}
+
+
+	@Override
+	public LoginMember login(String userId, String password) throws Exception {
+		LoginMember me =dao.findById(userId);
+//		String salt = SHA256Util.generateSalt();
+//		String encPassword1 = SHA256Util.getEncrypt(password, salt);
+//		me.setPassword(encPassword1);
+//		me.setSalt(salt);
+//		System.out.println(salt);
+//		System.out.println(encPassword1);
+		if(me ==null) {
+			throw new LoginFailException("사용자 ID가 일치하지 않습니다.");
+			/**MyBatis : LoginFailEx으로 바꿔줌*/
+		} else {
+		
+			//db에 저장된 salt로 사용자가 입력한 password를 암호화
+			//이것이 db에 저장된 password와 일치여부확인
+			String encPassword =  SHA256Util.getEncrypt(password, me.getSalt());
+			
+			if(encPassword.equals(me.getPassword())) {
+				return me;
+			} else {
+				throw new LoginFailException("PW가 일치하지 않습니다.");
+				/**MyBatis : LoginFailEx으로 바꿔줌*/
+			}
+		
+		}
+	}
+
+}

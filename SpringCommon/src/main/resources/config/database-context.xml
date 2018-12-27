@@ -32,13 +32,8 @@
 	<tx:annotation-driven transaction-manager="transactionManager" /><!-- 어노테이션으로 관리한다는 뜻 -->
 	
 	
-	
-	
-	
-	<!--여기까지는 일반적으로 쓰이는 것  -->
+
 	<!-- MyBatis 설정 2가지는 수정해줘야함 -->
-	
-	<!-- MyBatis 설정 2가지는 수정해줘야함 :SpringCommon의 database-context에서 옮겨옴 >다시 가져옴 -->
 	
 	
 	<!-- SqlSessionFactoryBean 빈 객체 설정  : common.model로 수정-->

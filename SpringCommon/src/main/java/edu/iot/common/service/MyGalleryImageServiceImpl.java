@@ -12,14 +12,12 @@ import edu.iot.common.model.MyGalleryImage;
 
 @Service
 public class MyGalleryImageServiceImpl implements MyGalleryImageService {
-	
+	//	db연결
 	@Autowired
 	MyGalleryImageDao dao;
-//	update삭제하기 : 실패시 create 내요을 update로 옮기기
+
 	@Override
 	public void create(MyGalleryImage mgallery) throws Exception {
-		System.out.println("insert : "+mgallery);
-		
 		dao.insert(mgallery);
 	}
 
@@ -33,7 +31,6 @@ public class MyGalleryImageServiceImpl implements MyGalleryImageService {
 
 	@Override
 	public void update(MyGalleryImage mgallery) throws Exception {
-		System.out.println("update : "+ mgallery);
 		int result = dao.update(mgallery);
 		if(result == 0) {
 			throw new  IDMissmatchException();
@@ -43,20 +40,15 @@ public class MyGalleryImageServiceImpl implements MyGalleryImageService {
 	@Override
 	public void delete(MyGalleryImage mgallery) throws Exception {
 		dao.delete(mgallery);
-		
 	}
 
 	@Override
 	public List<MyGalleryImage> getList() throws Exception {
-		
 		return dao.getList();
 	}
 
 	@Override
 	public void addImage(MyGalleryImage image) throws Exception {//insert
 		dao.addImage(image);
-		
 	}
-
-
 }

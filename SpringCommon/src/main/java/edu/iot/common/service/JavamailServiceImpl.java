@@ -15,13 +15,12 @@ import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
-
 public class JavamailServiceImpl implements JavaMailService {
 
 	@Override
 	public void send(String title, String content) throws Exception {
-		String user = "XXXX"; // 네이버일 경우 네이버 계정, gmail경우 gmail 계정
-		String password = "XXXX"; // 패스워드
+		String user = "YourEmailAddress"; // 네이버일 경우 네이버 계정, gmail경우 gmail 계정
+		String password = "YourEmailPassword"; // 패스워드
 
 		// SMTP 서버 정보를 설정한다.
 		Properties prop = new Properties();
@@ -42,7 +41,7 @@ public class JavamailServiceImpl implements JavaMailService {
 			message.setFrom(new InternetAddress(user));
 
 			// 수신자메일주소
-			message.addRecipient(Message.RecipientType.TO, new InternetAddress("XXXX"));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress("YourEmailAddress"));
 
 			// Subject
 			message.setSubject(title); // 메일 제목을 입력

@@ -13,8 +13,6 @@
 
 <script>
 	$(function() {
-		/**edit의 첨부파일 삭제랑 거의 비슷*/
-
 		//	삭제눌렀을때 alert
 		$('.delete-btn').click(function(e) {
 			e.preventDefault();
@@ -23,8 +21,8 @@
 			var result = confirm("사진을 삭제할까요? ");
 
 			if (!result) return;
-
-			var url = '../gallery/delete';
+		
+			var url = '../gallery/delete';	//	url이 다른 Ajax delete url과 겹치지 않도록 주의
 			var params = {
 				imageId : imageId
 			};
@@ -34,8 +32,7 @@
 				// 결과 응답 데이터는 result로 전달됨
 				// 이곳에서 this는 Ajax핸들러이므로(더 이상 a태그가 아님) this 사용불가
 
-				if (result == 'delete') {
-					//어디로 어떻게 이동?:javascript로 페이지 이동 location
+				if (result == 'delete') {	// MyGalleryController의 delete 메서드의 return값과 일치
 					location = '../gallery/list';
 				} else {
 					alert('삭제 실패 : ' + result);
@@ -88,6 +85,7 @@
 			<div class="mdb-lightbox" data-pswp-uid="6">
 
 				<!-- 썸네일 이미지 -->
+				<!--div태그의 row와 col은 set로 묶여야 제대로 출력됨-->
 				<div class="row">
 					<c:forEach var="image" items="${mgallery}" varStatus="status">
 						<div class="col-md-3">

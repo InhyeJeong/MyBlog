@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
+//	자기소개 페이지 컨트롤러
 @Controller
 @RequestMapping("/about")
 public class AboutController {
 	
-	/** 목록보기 /list */
+	//	목록보기 list
 	@RequestMapping(value = "view", method=RequestMethod.GET)
 	public void list(Model model) throws Exception {
 	}
