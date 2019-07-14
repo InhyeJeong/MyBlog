@@ -19,9 +19,9 @@ Apache Commons file upload / Apache Commons IO / thumbnailator / jackson
 
 ##  이 프로젝트의 **Tech Stack**
 ```dart
-jQuery / javascript / java / lombok / css3 /
+javascript / java/ jQuery / lombok / css3 /
 html5 / oracle / tomcat8.5 / Spring / MDBootstrap /
-Mybatis / JDBC / json / tinymce / Ajax
+Mybatis / JDBC / tinymce / Ajax
 ```
 
 
