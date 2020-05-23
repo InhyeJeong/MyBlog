@@ -1,4 +1,4 @@
-# [**MyBlog**](http://3.17.49.226:8080/myblog/)
+# **MyBlog**
 
 Spring MVC 패턴으로 만든 개인 블로그 반응형 웹사이트 입니다.
 
@@ -26,7 +26,7 @@ Mybatis / JDBC / tinymce / Ajax
 
 
 
-* [**MyBlog Link**](http:/3.17.49.226:8080/myblog/)
+* **MyBlog Link**
 <p align="center">
 <img src="./images/myblog_main.png" width="500" >	
 </p>
